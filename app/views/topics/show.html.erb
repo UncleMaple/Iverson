@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1>Topic name: <%= @topic.topic_name %></h1>
+</p>
+
+<br>
+
+<h2>Messages</h2>
+<%= render @topic.messages %>
+
+<br>
+
+<h2>Add a message:</h2>
+<%= render 'messages/form' %>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>

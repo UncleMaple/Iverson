@@ -1,0 +1,2 @@
+module Subscribe::SHelper
+end

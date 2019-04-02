@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<h1 align="center">我的</h1>
+<hr/>
+<h2>我的信息</h2>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</p>
+<br/>
+<hr/>
+<h2>我的订阅</h2>
+
+<table>
+  <%= @user.subscribes.each do |item| %>
+    <tr>
+      <td>
+        <%= link_to item.topic.topic_name , topic_path(item.topic)%>
+      </td>
+      <td>
+        <%= button_to '不再订阅', subscribe_path(item), method: :delete, data: { confirm: "Are you sure?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br/>
+<%= link_to "添加其它订阅" , topics_path %>
+<hr/>
+<br/><br/><br/>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

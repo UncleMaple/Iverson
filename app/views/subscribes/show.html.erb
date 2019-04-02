@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is mail:</strong>
+  <%= @subscribe.is_mail %>
+</p>
+
+<p>
+  <strong>Is message:</strong>
+  <%= @subscribe.is_message %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @subscribe.topic.topic_name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @subscribe.user.username %>
+</p>
+
+<%= link_to 'Edit', edit_subscribe_path(@subscribe) %> |
+<%= link_to 'Back', subscribes_path %>

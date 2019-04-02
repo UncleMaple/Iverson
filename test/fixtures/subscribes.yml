@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_mail: false
+  is_message: false
+  topic: one
+  user: one
+
+two:
+  is_mail: false
+  is_message: false
+  topic: two
+  user: two
