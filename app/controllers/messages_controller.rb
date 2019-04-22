@@ -16,14 +16,25 @@ class MessagesController < ApplicationController
   end
 
   def edit
-    # @topic = Topic.find(params[:topic_id])
-    # @message = @topic.messages.find(params[:id])
   end
 
   def create
     @topic = Topic.find(params[:topic_id])
     @message = @topic.messages.create(message_params)
-    redirect_to topic_path(@topic)
+    respond_to do |format|
+      if @message.save
+        format.html { redirect_to topic_path(@topic), notice: '添加message成功' }
+        format.js
+        format.json { render json: @message, status: :created, location: @topic }
+      else
+        @errors = @message.errors.full_messages
+        # require "pry";binding.pry;
+        format.html { redirect_to topic_path(@topic), notice: '添加message失败，请检查标题和内容是否正确' }
+        format.js
+        format.json { render json: @message.errors, status: :unprocessable_entity, location: @topic}
+        # format.json { render json: @message.errors, status: :unprocessable_entity}
+      end
+    end
   end
 
   def update
@@ -39,10 +50,8 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    # @topic = Topic.find(params[:topic_id])
-    # @message = @topic.messages.find(params[:id])
     @message.destroy
-    redirect_to topic_path(@topic)
+    redirect_to topic_path(@message.topic)
   end
 
   private

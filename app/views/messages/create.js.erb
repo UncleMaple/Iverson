@@ -1,0 +1,15 @@
+<% if @errors %>
+  <% if @errors.to_s.include?"必须有标题" %>
+    alert('添加失败：必须有标题');
+  <% elsif @errors.to_s.include?"标题必须唯一"%>
+    alert('添加失败：该标题已经存在');
+  <% elsif @errors.to_s.include?"必须有内容"  %>
+    alert('添加失败：必须有内容');
+  <% else %>
+    alert('添加失败：未知错误');
+  <% end %>
+<% else %>
+  $("<%= escape_javascript(render @message) %>").appendTo("#messages");
+  $('#message_title').val('');
+  $('#message_content').val('');
+<% end %>

@@ -7,7 +7,13 @@
 <br>
 
 <h2>Messages</h2>
+
 <%= render @topic.messages %>
+<p id="messages">
+  <% if @errors %>
+    <font><%= @errors %></font>
+  <% end %>
+</p>
 
 <br>
 

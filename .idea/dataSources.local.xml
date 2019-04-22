@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails sub_system: test" uuid="86251220-413e-4933-b4e3-57d401f61e00">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+    </data-source>
+    <data-source name="Rails sub_system: production" uuid="1e73a34a-2f71-440a-a999-08117d35a2d2">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>sub_system</user-name>
+    </data-source>
+    <data-source name="Rails sub_system: development" uuid="02581616-9990-41e5-aa28-21f40fc9d126">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>maple</user-name>
+    </data-source>
+  </component>
+</project>
